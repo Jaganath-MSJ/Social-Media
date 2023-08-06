@@ -10,7 +10,8 @@ const app = express();
 dotenv.config();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    // origin: "http://localhost:3000",
+    origin: "https://msj-social-media.netlify.app",
     credentials: true,
   })
 );
