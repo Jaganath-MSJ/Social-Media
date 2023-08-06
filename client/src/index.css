@@ -1,0 +1,32 @@
+:root {
+  --border-color: black;
+  --scrollbar-thumb: lightblue;
+  --background-color1: lightcyan;
+  --background-color2: dodgerblue;
+  --background-color3: blueviolet;
+  --background-color4: rgb(196, 229, 240);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  width: 0.3rem;
+  border-radius: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
