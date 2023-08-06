@@ -13,7 +13,7 @@ function Login() {
     if (user.accessToken) {
       navigate("/");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");

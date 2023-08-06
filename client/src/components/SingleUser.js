@@ -19,7 +19,6 @@ import {
 import {
   deactivateUser,
   getUserInfoById,
-  getUserNameById,
 } from "../features/userSlice";
 import Post from "./Post";
 import EditUserDetails from "./EditUserDetails";
@@ -85,10 +84,6 @@ function SingleUser({ userId }) {
       }
     }
   };
-
-  const deactivateByName = useSelector((state) =>
-    getUserNameById(state, userInfo.deactivatedBy)
-  );
 
   return (
     <Container>
@@ -191,6 +186,7 @@ function SingleUser({ userId }) {
       {showEditUser && (
         <EditUserDetails onClose={toogleEditUser} userId={userInfo.userId} />
       )}
+      <ToastContainer />
     </Container>
   );
 }

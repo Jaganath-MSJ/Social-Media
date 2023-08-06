@@ -15,7 +15,7 @@ function Home() {
     if (!user.accessToken) {
       navigate("/login");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   const toogleEditUser = () => {
     setShowEditUser(!showEditUser);

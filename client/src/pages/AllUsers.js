@@ -14,7 +14,7 @@ function AllUsers() {
     if (!user.accessToken) {
       navigate("/login");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   const allUsers = useSelector(selectAllUser);
   const [userSelected, setUserSelected] = useState(userIdFromToken);
