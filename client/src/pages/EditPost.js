@@ -89,14 +89,14 @@ function EditPost() {
             type="text"
             name="title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value.trim())}
             placeholder="Title"
           />
           <textarea
             type="text"
             name="content"
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={(e) => setContent(e.target.value.trim())}
             placeholder="Content"
           />
           <div>

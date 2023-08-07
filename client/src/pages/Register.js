@@ -13,21 +13,37 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleValidation = () => {
+    if (name.length < 3) {
+      toast.error("Name must be at least 3 characters", toastOptionsError);
+      return false;
+    } else if (password.length < 8) {
+      toast.error("Password must be at least 8 characters", toastOptionsError);
+      return false;
+    } else if (email === "") {
+      toast.error("Email is required", toastOptionsError);
+      return false;
+    }
+    return true;
+  };
+
   const handleRegsiter = async (event) => {
     event.preventDefault();
     if (name !== "" && email !== "" && password !== "") {
-      const joinedOn = new Date().toISOString();
-      const result = await axios.post(registerRoute, {
-        name,
-        email,
-        password,
-        joinedOn,
-      });
-      if (!result.data.status) {
-        toast.error(result.data.msg, toastOptionsError);
-      } else {
-        toast.success(result.data.msg, toastOptionsSuccess);
-        navigate("/login");
+      if (handleValidation()) {
+        const joinedOn = new Date().toISOString();
+        const result = await axios.post(registerRoute, {
+          name,
+          email,
+          password,
+          joinedOn,
+        });
+        if (!result.data.status) {
+          toast.error(result.data.msg, toastOptionsError);
+        } else {
+          toast.success(result.data.msg, toastOptionsSuccess);
+          navigate("/login");
+        }
       }
     } else {
       toast.error("Please fill all the fields", toastOptionsError);
@@ -43,7 +59,7 @@ function Register() {
               type="text"
               placeholder="Name"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value.trim())}
               autoComplete="name"
             />
           </div>
@@ -52,7 +68,7 @@ function Register() {
               type="email"
               placeholder="Email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value.trim())}
               autoComplete="email"
             />
           </div>
@@ -61,7 +77,7 @@ function Register() {
               type="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value.trim())}
               autoComplete="password"
             />
           </div>

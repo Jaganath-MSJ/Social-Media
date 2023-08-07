@@ -66,14 +66,14 @@ function EditUserDetails({ onClose, userId }) {
             name="name"
             placeholder="User Name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value.trim())}
           />
           <input
             type="email"
             name="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value.trim())}
           />
           {userRoleFromToken === ROLE.ADMIN &&
             userInfo.userId !== userIdFromToken && (
@@ -93,7 +93,7 @@ function EditUserDetails({ onClose, userId }) {
             name="bio"
             placeholder="Bio"
             value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            onChange={(e) => setBio(e.target.value.trim())}
           />
           <div>
             <GrEmoji

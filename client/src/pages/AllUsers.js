@@ -29,7 +29,7 @@ function AllUsers() {
             placeholder="Serahc User"
             name="searchUser"
             value={searchUser}
-            onChange={(e) => setSearchUser(e.target.value)}
+            onChange={(e) => setSearchUser(e.target.value.trim())}
           />
         </div>
         <div className="allUsers">

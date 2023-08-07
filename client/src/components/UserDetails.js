@@ -93,14 +93,14 @@ function UserDetails({ onOpen }) {
             placeholder="Post Title"
             name="title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value.trim())}
           />
           <textarea
             type="text"
             placeholder="Post Content"
             name="content"
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={(e) => setContent(e.target.value.trim())}
           />
           <div>
             <GrEmoji

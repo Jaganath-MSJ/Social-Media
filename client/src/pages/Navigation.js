@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Logout from "../components/Logout";
+import { UserContext } from "../App";
 
 function Navigation({ handleLogout }) {
+  const { user } = useContext(UserContext);
   return (
     <Nav>
       <h2>
@@ -16,9 +18,15 @@ function Navigation({ handleLogout }) {
         <li>
           <Link to="/register">Register</Link>
         </li>
-        <li>
-          <Logout handleLogout={handleLogout} />
-        </li>
+        {user?.accessToken ? (
+          <li>
+            <Logout handleLogout={handleLogout} />
+          </li>
+        ) : (
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        )}
       </ul>
     </Nav>
   );

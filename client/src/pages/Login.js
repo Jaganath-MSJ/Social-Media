@@ -49,9 +49,9 @@ function Login() {
 
   const handleChange = (e) => {
     if (e.target.name === "name") {
-      setName(e.target.value);
+      setName(e.target.value.trim());
     } else {
-      setPassword(e.target.value);
+      setPassword(e.target.value.trim());
     }
   };
 
