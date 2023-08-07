@@ -6,12 +6,13 @@ import cookieParser from "cookie-parser";
 import userRouter from "./routes/userRoutes.js";
 import postRouter from "./routes/postRoutes.js";
 
+const URL = process.env.PORT || 8000;
+
 const app = express();
 dotenv.config();
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    // origin: "https://msj-social-media.netlify.app",
+    origin: "https://msj-social-media.netlify.app",
     credentials: true,
   })
 );
