@@ -27,20 +27,42 @@ function EditUserDetails({ onClose, userId }) {
   const userStatus = useSelector(getUserStatus);
   const userError = useSelector(getUserError);
 
+  const handleValidation = () => {
+    if (name.trim().length < 3) {
+      toast.error("Name must be at least 3 characters", toastOptionsError);
+      return false;
+    } else if (bio.trim() === "") {
+      toast.error("bio is required", toastOptionsError);
+      return false;
+    } else if (email === "") {
+      toast.error("Email is required", toastOptionsError);
+      return false;
+    }
+    return true;
+  };
+
   const handleEditUserDetails = (e) => {
     e.preventDefault();
     if (name !== "" && email !== "" && bio !== "" && role !== "") {
-      dispatch(
-        updateUser({
-          details: { userId: userInfo.userId, name, email, bio, role },
-          token: user.accessToken,
-        })
-      );
-      if (userStatus === "failed") {
-        toast.warning(userError, toastOptionsError);
-      } else {
-        toast.success("User updated successfully", toastOptionsSuccess);
-        onClose();
+      if (handleValidation) {
+        dispatch(
+          updateUser({
+            details: {
+              userId: userInfo.userId,
+              name: name.trim(),
+              email,
+              bio: bio.trim(),
+              role,
+            },
+            token: user.accessToken,
+          })
+        );
+        if (userStatus === "failed") {
+          toast.warning(userError, toastOptionsError);
+        } else {
+          toast.success("User updated successfully", toastOptionsSuccess);
+          onClose();
+        }
       }
     } else {
       toast.error("Please fill all the fields", toastOptionsError);
@@ -66,7 +88,7 @@ function EditUserDetails({ onClose, userId }) {
             name="name"
             placeholder="User Name"
             value={name}
-            onChange={(e) => setName(e.target.value.trim())}
+            onChange={(e) => setName(e.target.value.replace(/\s+/g, " "))}
           />
           <input
             type="email"
@@ -93,7 +115,7 @@ function EditUserDetails({ onClose, userId }) {
             name="bio"
             placeholder="Bio"
             value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            onChange={(e) => setBio(e.target.value.replace(/\s+/g, " "))}
           />
           <div>
             <GrEmoji

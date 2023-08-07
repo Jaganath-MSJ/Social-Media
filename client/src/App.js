@@ -25,7 +25,7 @@ function App() {
   const userIdFromToken = user?.accessToken
     ? jwtDecode(user.accessToken).userId
     : null;
-    const userRoleFromToken = user?.accessToken
+  const userRoleFromToken = user?.accessToken
     ? jwtDecode(user.accessToken).role
     : null;
 
@@ -83,7 +83,9 @@ function App() {
       </section>
     );
   return (
-    <UserContext.Provider value={{ user, setUser, userIdFromToken, userRoleFromToken }}>
+    <UserContext.Provider
+      value={{ user, setUser, userIdFromToken, userRoleFromToken }}
+    >
       <div className="App">
         <Navigation handleLogout={handleLogout} />
         <Routes>

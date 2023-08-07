@@ -7,12 +7,16 @@ import userRouter from "./routes/userRoutes.js";
 import postRouter from "./routes/postRoutes.js";
 
 const URL = process.env.PORT || 8000;
+const frondEndURL =
+  URL === 8000
+    ? "http://localhost:3000"
+    : "https://msj-social-media.netlify.app";
 
 const app = express();
 dotenv.config();
 app.use(
   cors({
-    origin: "https://msj-social-media.netlify.app",
+    origin: frondEndURL,
     credentials: true,
   })
 );
@@ -35,6 +39,6 @@ mongoose
     console.log(err.message);
   });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server started on port ${process.env.PORT}`);
+app.listen(URL, () => {
+  console.log(`Server started on port ${URL}`);
 });

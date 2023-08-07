@@ -29,7 +29,7 @@ function UserDetails({ onOpen }) {
 
   const handleAddPost = (e) => {
     e.preventDefault();
-    if (title !== "" && content !== "") {
+    if (title.trim() !== "" && content.trim() !== "") {
       try {
         dispatch(
           addPost({
@@ -93,7 +93,7 @@ function UserDetails({ onOpen }) {
             placeholder="Post Title"
             name="title"
             value={title}
-            onChange={(e) => setTitle(e.target.value.trim())}
+            onChange={(e) => setTitle(e.target.value.replace(/\s+/g, " "))}
           />
           <textarea
             type="text"

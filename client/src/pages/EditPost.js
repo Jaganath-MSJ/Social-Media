@@ -30,7 +30,7 @@ function EditPost() {
 
   const handleUpdatePost = (e) => {
     e.preventDefault();
-    if (title !== "" && content !== "") {
+    if (title.trim() !== "" && content.trim() !== "") {
       dispatch(
         updatePost({
           details: {
@@ -89,7 +89,7 @@ function EditPost() {
             type="text"
             name="title"
             value={title}
-            onChange={(e) => setTitle(e.target.value.trim())}
+            onChange={(e) => setTitle(e.target.value.replace(/\s+/g, " "))}
             placeholder="Title"
           />
           <textarea

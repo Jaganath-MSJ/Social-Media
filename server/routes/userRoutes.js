@@ -19,5 +19,10 @@ userRouter.post("/isUserAuth", isUserAuth);
 userRouter.post("/refresh_token", refreshToken);
 userRouter.get("/getAllUsers", getAllUser);
 userRouter.post("/updateUser", isUserAuth, isAuthorizedForUser, updateUser);
-userRouter.post("/deactivateUser", isUserAuth, isAuthorizedForUser, deactivatedUser);
+userRouter.post(
+  "/deactivateUser",
+  isUserAuth,
+  isAuthorizedForUser,
+  deactivatedUser
+);
 export default userRouter;

@@ -28,7 +28,7 @@ function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
+          name: name.trim(),
           password,
         }),
       });
@@ -49,7 +49,7 @@ function Login() {
 
   const handleChange = (e) => {
     if (e.target.name === "name") {
-      setName(e.target.value.trim());
+      setName(e.target.value.replace(/\s+/g, " "));
     } else {
       setPassword(e.target.value.trim());
     }

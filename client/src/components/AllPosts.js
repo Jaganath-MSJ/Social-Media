@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import {
-  getPostStatus,
-  selectAllPost,
-} from "../features/postSlice";
+import { getPostStatus, selectAllPost } from "../features/postSlice";
 import Post from "./Post";
 
 function Posts() {

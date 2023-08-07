@@ -150,7 +150,8 @@ export const updateUser = async (req, res, next) => {
     const userEmailExists = await userCollection.findOne({ email: email });
     let user = null;
     if (
-      (userNameExists?.userId === userId && userEmailExists?.userId === userId) ||
+      (userNameExists?.userId === userId &&
+        userEmailExists?.userId === userId) ||
       (!userNameExists && userEmailExists?.userId === userId) ||
       (!userEmailExists && userNameExists?.userId === userId)
     ) {

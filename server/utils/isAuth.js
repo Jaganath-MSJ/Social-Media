@@ -14,25 +14,32 @@ export const isAuth = (req) => {
 export const isAuthorizedForUser = async (req, res, next) => {
   const authorization = req.headers["authorization"];
   const token = authorization && authorization.split(" ")[1];
-  const {userId, role} = jwtDecode(token);
-  if (userId === req.body.userId || role===ROLE.ADMIN) {
+  const { userId, role } = jwtDecode(token);
+  if (userId === req.body.userId || role === ROLE.ADMIN) {
     next();
   } else {
     return res
       .status(400)
-      .send({msg: "You aren't authorized to update user details." });
-  } 
+      .send({ msg: "You aren't authorized to update user details." });
+  }
 };
 
 export const isAuthorizedForPost = (req, res, next) => {
   const authorization = req.headers["authorization"];
   const token = authorization && authorization.split(" ")[1];
-  const {userId, role} = jwtDecode(token);
-  if (userId === req.body.editor || role===ROLE.ADMIN || role===ROLE.EDITOR) {
+  const { userId, role } = jwtDecode(token);
+  if (
+    userId === req.body.editor ||
+    role === ROLE.ADMIN ||
+    role === ROLE.EDITOR
+  ) {
     next();
   } else {
     return res
       .status(400)
-      .send({ status: false, msg: "You aren't authorized to change post details." });
-  } 
-}
+      .send({
+        status: false,
+        msg: "You aren't authorized to change post details.",
+      });
+  }
+};

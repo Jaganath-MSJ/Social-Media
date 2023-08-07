@@ -26,7 +26,7 @@ function SinglePost() {
 
   const handleComment = async (e) => {
     e.preventDefault();
-    if (comment !== "") {
+    if (comment.trim() !== "") {
       dispatch(
         addComment({
           details: {
@@ -39,7 +39,7 @@ function SinglePost() {
         })
       );
     } else {
-      toast.error("Please fill all the fields", toastOptionsError);
+      toast.error("Please fill comments", toastOptionsError);
     }
   };
 

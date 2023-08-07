@@ -14,7 +14,7 @@ function Register() {
   const [password, setPassword] = useState("");
 
   const handleValidation = () => {
-    if (name.length < 3) {
+    if (name.trim().length < 3) {
       toast.error("Name must be at least 3 characters", toastOptionsError);
       return false;
     } else if (password.length < 8) {
@@ -33,7 +33,7 @@ function Register() {
       if (handleValidation()) {
         const joinedOn = new Date().toISOString();
         const result = await axios.post(registerRoute, {
-          name,
+          name: name.trim(),
           email,
           password,
           joinedOn,
@@ -59,7 +59,7 @@ function Register() {
               type="text"
               placeholder="Name"
               value={name}
-              onChange={(e) => setName(e.target.value.trim())}
+              onChange={(e) => setName(e.target.value.replace(/\s+/g, " "))}
               autoComplete="name"
             />
           </div>

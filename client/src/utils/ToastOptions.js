@@ -7,10 +7,9 @@ export const toastOptionsError = {
 };
 
 export const toastOptionsSuccess = {
-    position: "top-center",
-    autoClose: 3000,
-    pauseOnHover: true,
-    draggable: true,
-    theme: "light",
-  };
-  
+  position: "top-center",
+  autoClose: 3000,
+  pauseOnHover: true,
+  draggable: true,
+  theme: "light",
+};
