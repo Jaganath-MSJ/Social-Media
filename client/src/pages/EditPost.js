@@ -96,7 +96,7 @@ function EditPost() {
             type="text"
             name="content"
             value={content}
-            onChange={(e) => setContent(e.target.value.trim())}
+            onChange={(e) => setContent(e.target.value)}
             placeholder="Content"
           />
           <div>

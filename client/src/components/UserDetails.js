@@ -100,7 +100,7 @@ function UserDetails({ onOpen }) {
             placeholder="Post Content"
             name="content"
             value={content}
-            onChange={(e) => setContent(e.target.value.trim())}
+            onChange={(e) => setContent(e.target.value)}
           />
           <div>
             <GrEmoji

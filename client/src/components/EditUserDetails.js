@@ -93,7 +93,7 @@ function EditUserDetails({ onClose, userId }) {
             name="bio"
             placeholder="Bio"
             value={bio}
-            onChange={(e) => setBio(e.target.value.trim())}
+            onChange={(e) => setBio(e.target.value)}
           />
           <div>
             <GrEmoji
