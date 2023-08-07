@@ -1,4 +1,4 @@
-const host = "http://localhost:8000";
+const host = "https://social-media-backend-a5r2.onrender.com";
 
 export const registerRoute = `${host}/api/auth/register`;
 export const loginRoute = `${host}/api/auth/login`;
