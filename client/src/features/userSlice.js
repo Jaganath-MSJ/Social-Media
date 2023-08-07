@@ -35,7 +35,6 @@ export const updateUser = createAsyncThunk("updateUser", async (updateUser) => {
 export const deactivateUser = createAsyncThunk(
   "deactivatedUser",
   async (deactivateUser) => {
-    console.log("user",deactivateUser);
     try {
       const res = await axios.post(
         deactivateUserRoute,

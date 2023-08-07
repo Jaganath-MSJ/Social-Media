@@ -140,7 +140,6 @@ export const retweetPost = async (req, res, next) => {
     let postRetweet = null,
       post;
     if (userIndex === -1) {
-      console.log("1");
       postRetweet = await postCollection.create({
         postId: nanoid(),
         autorId,

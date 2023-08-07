@@ -91,7 +91,6 @@ export const rewteetPost = createAsyncThunk(
   "rewteetPost",
   async (rewteetPost) => {
     try {
-      console.log("2");
       const res = await axios.post(retweetPostRoute, rewteetPost.details, {
         headers: { authorization: `Bearer ${rewteetPost.token}` },
       });

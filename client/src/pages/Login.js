@@ -40,7 +40,7 @@ function Login() {
         toast.success(result.msg, toastOptionsSuccess);
         navigate("/");
       } else {
-        console.log(result.data.error);
+        toast.error("Can't Login. Please try again", toastOptionsError);
       }
     } else {
       toast.error("Please fill all the fields", toastOptionsError);
