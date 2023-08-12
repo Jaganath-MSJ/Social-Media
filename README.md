@@ -32,7 +32,7 @@ Welcome to my Social Media n project! This repository showcases my skills in imp
 6. Open the app in your browser: `http://localhost:3000`
 
 ## Demo:
-For a live demonstration, you can visit [Demo Link](https://msj-weather-app.netlify.app).
+For a live demonstration, you can visit [Demo Link](https://msj-social-media.netlify.app).
 
 ## Contact:
 Feel free to reach out to me via email at [jagan.msjc@gmail.com](mailto:jagan.msjc@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/jaganathms).
