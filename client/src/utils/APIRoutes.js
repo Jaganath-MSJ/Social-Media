@@ -1,7 +1,7 @@
 const host =
-  process.env.NODE_ENV === "production"
-    ? process.env.BACKEND_URL
-    : "http://localhost:8000";
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:8000"
+    : process.env.BACKEND_URL;
 
 export const registerRoute = `${host}/api/auth/register`;
 export const loginRoute = `${host}/api/auth/login`;
