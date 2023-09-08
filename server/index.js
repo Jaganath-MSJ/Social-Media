@@ -8,9 +8,7 @@ import postRouter from "./routes/postRoutes.js";
 
 const URL = process.env.PORT || 8000;
 const frondEndURL =
-  URL === 8000
-    ? "http://localhost:3000"
-    : "https://msj-social-media.netlify.app";
+  URL === 8000 ? "http://localhost:3000" : process.env.FRONTEND_URL;
 
 const app = express();
 dotenv.config();
