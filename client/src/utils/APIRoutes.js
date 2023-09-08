@@ -1,7 +1,7 @@
 const host =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000"
-    : process.env.BACKEND_URL;
+    : "https://social-media-backend-a5r2.onrender.com";
 
 export const registerRoute = `${host}/api/auth/register`;
 export const loginRoute = `${host}/api/auth/login`;
