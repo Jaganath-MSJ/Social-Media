@@ -139,6 +139,7 @@ const Container = styled.article`
   }
   .postHeader {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     a {
       display: flex;

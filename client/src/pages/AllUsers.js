@@ -154,6 +154,15 @@ const Container = styled.section`
   @media screen and (max-width: 950px) {
     grid-template-columns: 45% 55%;
   }
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    .users {
+      height: 30rem;
+      .allUsers {
+        padding: 0.34rem;
+      }
+    }
+  }
 `;
 
 export default AllUsers;

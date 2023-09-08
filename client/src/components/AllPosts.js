@@ -55,6 +55,7 @@ const Container = styled.section`
   margin-right: 1rem;
   padding: 0.5rem;
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 0.5rem;
   height: 83.5vh;

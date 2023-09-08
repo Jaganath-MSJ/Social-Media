@@ -140,6 +140,7 @@ function EditPost() {
 }
 
 const Container = styled.section`
+  margin-top: 2rem;
   height: 70vh;
   width: 100%;
   display: flex;
@@ -184,6 +185,7 @@ const Container = styled.section`
       }
       & > div {
         display: flex;
+        position: relative;
         justify-content: space-between;
         .emojiImg {
           cursor: pointer;
@@ -194,8 +196,8 @@ const Container = styled.section`
         }
         .EmojiPickerReact {
           position: absolute;
-          top: 9rem;
-          left: 30rem;
+          top: -21rem;
+          left: 0rem;
           box-shadow: 0 5px 10px var(--border-color);
           .epr-body::-webkit-scrollbar {
             width: 5px;
@@ -213,6 +215,7 @@ const Container = styled.section`
         .buttons {
           display: flex;
           justify-content: end;
+          flex-wrap: wrap;
           gap: 1rem;
           & > button {
             border: none;
@@ -235,6 +238,9 @@ const Container = styled.section`
           }
         }
       }
+    }
+    @media screen and (max-width: 550px) {
+      width: 80%;
     }
   }
 `;

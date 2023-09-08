@@ -33,12 +33,17 @@ function Home() {
 }
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: 30% 70%;
+  display: flex;
   gap: 1rem;
   margin: 1rem;
-  @media screen and (max-width: 900px) {
-    grid-template-columns: 45% 55%;
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    & > aside {
+      width: 100%;
+    }
+    & > section {
+      flex: none;
+    }
   }
 `;
 

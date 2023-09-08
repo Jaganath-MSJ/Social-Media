@@ -153,6 +153,9 @@ const Container = styled.section`
       }
     }
   }
+  @media screen and (max-width: 550px) {
+    margin: 0;
+  }
 `;
 
 export default SinglePost;

@@ -102,7 +102,6 @@ const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 2rem;
   .form {
     max-width: 26rem;
     width: 100%;

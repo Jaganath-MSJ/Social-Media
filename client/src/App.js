@@ -34,7 +34,7 @@ function App() {
       logoutRoute,
       {},
       {
-        credentials: "include",
+        withCredentials: true,
       }
     );
     if (result.data.status) {
@@ -64,23 +64,11 @@ function App() {
 
   if (loading)
     return (
-      <section>
-        <Navigation />
-        <div
-          style={{
-            width: "40rem",
-            height: "40rem",
-            overflow: "hidden",
-            margin: "0.5rem 25%",
-          }}
-        >
-          <img
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            src={loadingImg}
-            alt="loading..."
-          />
+      <main>
+        <div className="loadingImage">
+          <img src={loadingImg} alt="loading..." />
         </div>
-      </section>
+      </main>
     );
   return (
     <UserContext.Provider

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Logout from "../components/Logout";
 import { UserContext } from "../App";
 
 function Navigation({ handleLogout }) {
@@ -15,12 +14,9 @@ function Navigation({ handleLogout }) {
         <li>
           <Link to="/user">Users</Link>
         </li>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
         {user?.accessToken ? (
           <li>
-            <Logout handleLogout={handleLogout} />
+            <button onClick={handleLogout}>Logout</button>
           </li>
         ) : (
           <li>
@@ -42,12 +38,30 @@ const Nav = styled.nav`
   & ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 2rem;
     & li {
       list-style: none;
       font-size: 1.2rem;
       font-weight: 500;
       transition: 0.3s ease-in-out;
+      & > button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3rem 0.7rem;
+        border-radius: 0.5rem;
+        background-color: var(--background-color2);
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-weight: 400;
+        font-size: 1rem;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+      }
     }
   }
   & a:hover {

@@ -123,7 +123,8 @@ function UserDetails({ onOpen }) {
     </Container>
   );
 }
-const Container = styled.section`
+const Container = styled.aside`
+  width: 25rem;
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   height: max-content;
@@ -220,7 +221,7 @@ const Container = styled.section`
           }
         }
         & > button {
-          margin: 0.3rem 5rem;
+          margin: 0.3rem auto;
           width: 8rem;
           height: 2rem;
           font-size: 1.1rem;

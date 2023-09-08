@@ -61,7 +61,7 @@ export const login = async (req, res, next) => {
 
 export const logout = (req, res) => {
   try {
-    res.clearCookie("refreshtoken", { path: "/api/auth/refresh_token" });
+    res.clearCookie("refreshToken", { path: "/api/auth/refresh_token" });
     return res.send({
       msg: "You are successfully Logout",
       status: true,
@@ -89,7 +89,7 @@ export const isUserAuth = async (req, res, next) => {
 };
 
 export const refreshToken = async (req, res) => {
-  const token = req.cookies.refreshToken;
+  const token = req.cookies?.refreshToken;
   if (!token) {
     return res.send({ accessToken: null });
   }

@@ -154,7 +154,7 @@ const Container = styled.div`
     background-color: #fff;
     padding: 2rem;
     border-radius: 0.5rem;
-    width: 30vw;
+    width: 30rem;
     height: max-content;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     position: relative;
@@ -230,7 +230,7 @@ const Container = styled.div`
           }
         }
         & > button {
-          margin: 0.3rem 5rem;
+          margin: 0.3rem auto;
           width: 9rem;
           height: 2rem;
           font-size: 1.1rem;
@@ -241,6 +241,9 @@ const Container = styled.div`
           cursor: pointer;
         }
       }
+    }
+    @media screen and (max-width: 550px) {
+      width: 80%;
     }
   }
 `;
