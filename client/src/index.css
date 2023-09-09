@@ -30,3 +30,17 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.loadingImage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

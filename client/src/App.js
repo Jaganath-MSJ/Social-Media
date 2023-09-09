@@ -64,8 +64,8 @@ function App() {
 
   if (loading)
     return (
-      <main>
-        <div className="loadingImage">
+      <main className="loadingImage">
+        <div>
           <img src={loadingImg} alt="loading..." />
         </div>
       </main>
@@ -74,7 +74,7 @@ function App() {
     <UserContext.Provider
       value={{ user, setUser, userIdFromToken, userRoleFromToken }}
     >
-      <div className="App">
+      <main>
         <Navigation handleLogout={handleLogout} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -88,7 +88,7 @@ function App() {
           </Route>
         </Routes>
         <ToastContainer />
-      </div>
+      </main>
     </UserContext.Provider>
   );
 }
