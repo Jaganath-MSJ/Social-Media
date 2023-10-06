@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { BiSolidUser } from "react-icons/bi";
 import { UserContext } from "../App";
 import { selectAllUser } from "../features/userSlice";
-import SingleUser from "../components/SingleUser";
+import SingleUser from "./SingleUser";
 import { useNavigate } from "react-router-dom";
 
 function AllUsers() {

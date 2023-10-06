@@ -17,8 +17,8 @@ import {
   selectUserRepliesByUserId,
 } from "../features/postSlice";
 import { deactivateUser, getUserInfoById } from "../features/userSlice";
-import Post from "./Post";
-import EditUserDetails from "./EditUserDetails";
+import Post from "../components/Post";
+import EditUserDetails from "../components/EditUserDetails";
 import { UserContext } from "../App";
 import ROLE from "../utils/Role";
 
