@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { toastOptionsError, toastOptionsSuccess } from "../utils/ToastOptions";
 import { formatDate } from "../utils/DateFunction.js";
-import { UserContext } from "../App.js";
+import { UserContext } from "../App.jsx";
 import { getUserInfoById } from "../features/userSlice.js";
 import { addPost, getPostError, getPostStatus } from "../features/postSlice.js";
 

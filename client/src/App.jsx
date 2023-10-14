@@ -19,7 +19,6 @@ const SingleUser = lazy(() => import("./pages/SingleUser"));
 export const UserContext = React.createContext([]);
 
 function App() {
-  console.log(process.env);
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);

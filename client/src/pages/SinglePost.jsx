@@ -7,10 +7,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { toastOptionsError } from "../utils/ToastOptions.js";
 import { calculateTimeAgo } from "../utils/DateFunction.js";
-import { UserContext } from "../App";
-import { getUserNameById } from "../features/userSlice";
-import { addComment, selectPostById } from "../features/postSlice";
-import Post from "../components/Post";
+import { UserContext } from "../App.jsx";
+import { getUserNameById } from "../features/userSlice.js";
+import { addComment, selectPostById } from "../features/postSlice.js";
+import Post from "../components/Post.jsx";
 
 function SinglePost() {
   const dispatch = useDispatch();

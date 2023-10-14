@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "./app/store.js";
-import { getAllPosts } from "./features/postSlice";
-import { getAllUsers } from "./features/userSlice";
+import { getAllPosts } from "./features/postSlice.js";
+import { getAllUsers } from "./features/userSlice.js";
 import "./index.css";
-import App from "./App";
+import App from "./App.jsx";
 
 store.dispatch(getAllUsers());
 store.dispatch(getAllPosts());
