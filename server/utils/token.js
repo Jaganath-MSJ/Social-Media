@@ -24,6 +24,8 @@ export const sendAccessToken = (req, res, accessToken) => {
 export const sendRefreshToken = (res, refreshToken) => {
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
+    secure: null,
+    sameSite: "none",
     path: "/api/auth/refresh_token",
   });
 };
