@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { BiSolidUser, BiSolidDislike } from "react-icons/bi";
 import { AiFillHeart } from "react-icons/ai";
-import { FaComments, FaRetweet } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
+import { FaComments, FaRetweet, FaEdit } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addEmotes, rewteetPost } from "../features/postSlice";
 import { calculateTimeAgo, formatDateAndTime } from "../utils/DateFunction.js";
@@ -180,5 +180,9 @@ const Container = styled.article`
     }
   }
 `;
+
+Post.propTypes = {
+  post: PropTypes.object,
+};
 
 export default Post;

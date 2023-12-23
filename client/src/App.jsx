@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import { logoutRoute, refreshTokenRoute } from "./utils/APIRoutes";
@@ -62,6 +62,10 @@ function App() {
     checkRereshToken();
   }, []);
 
+  const userContextValue = useMemo(() => {
+    return { user, setUser, userIdFromToken, userRoleFromToken };
+  }, [user, userIdFromToken, userRoleFromToken]);
+
   if (loading)
     return (
       <main className="loadingImage">
@@ -70,10 +74,9 @@ function App() {
         </div>
       </main>
     );
+
   return (
-    <UserContext.Provider
-      value={{ user, setUser, userIdFromToken, userRoleFromToken }}
-    >
+    <UserContext.Provider value={userContextValue}>
       <main>
         <Navigation handleLogout={handleLogout} />
         <Routes>

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { BiSolidUser } from "react-icons/bi";
@@ -27,7 +28,7 @@ function SingleUser({ userId }) {
   const { userIdFromToken, user, userRoleFromToken } = useContext(UserContext);
   const userParams = useParams();
   const userInfo = useSelector((state) =>
-    getUserInfoById(state, userId ? userId : userParams.userId)
+    getUserInfoById(state, userId ?? userParams.userId)
   );
   const dispatch = useDispatch();
   const [selectedNav, setSelectedNav] = useState("posts");
@@ -158,9 +159,9 @@ function SingleUser({ userId }) {
               <div key={post.postId}>
                 <Post post={post} key={post.postId} />
                 {selectedNav === "replies" &&
-                  post.comments.map((comment, index) => {
+                  post.comments.map((comment) => {
                     return (
-                      <div className="comment" key={index}>
+                      <div className="comment" key={comment.createdOn}>
                         <FcDownRight size="2rem" />
                         <article>
                           <div>
@@ -306,5 +307,9 @@ const Container = styled.section`
     }
   }
 `;
+
+SingleUser.propTypes = {
+  userId: PropTypes.string,
+};
 
 export default SingleUser;

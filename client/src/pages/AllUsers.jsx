@@ -39,13 +39,17 @@ function AllUsers() {
                   <div
                     key={user.userId}
                     onClick={() => setUserSelected(user.userId)}
-                    className={
-                      userSelected === user.userId
-                        ? "selectedUser"
-                        : user.userId === userIdFromToken
-                        ? "currentUser"
-                        : ""
-                    }
+                    onKeyDown={(e) => {
+                      if (e.keyCode === 13 || e.which === 13) {
+                        setUserSelected(user.userId);
+                      }
+                    }}
+                    className={() => {
+                      if (userSelected === user.userId) return "selectedUser";
+                      else if (user.userId === userIdFromToken)
+                        return "currentUser";
+                      else return "";
+                    }}
                   >
                     <BiSolidUser size="1.5rem" className="userImg" />
                     <h2>{user.name}</h2>
@@ -61,13 +65,17 @@ function AllUsers() {
                     <div
                       key={user.userId}
                       onClick={() => setUserSelected(user.userId)}
-                      className={
-                        userSelected === user.userId
-                          ? "selectedUser"
-                          : user.userId === userIdFromToken
-                          ? "currentUser"
-                          : ""
-                      }
+                      onKeyDown={(e) => {
+                        if (e.keyCode === 13 || e.which === 13) {
+                          setUserSelected(user.userId);
+                        }
+                      }}
+                      className={() => {
+                        if (userSelected === user.userId) return "selectedUser";
+                        else if (user.userId === userIdFromToken)
+                          return "currentUser";
+                        else return "";
+                      }}
                     >
                       <BiSolidUser size="1.5rem" className="userImg" />
                       <h2>{user.name}</h2>

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import Picker from "emoji-picker-react";
 import { GrEmoji } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
@@ -106,7 +107,7 @@ function EditUserDetails({ onClose, userId }) {
                 onChange={(e) => setRole(e.target.value)}
               >
                 {Object.values(ROLE).map((role) => {
-                  return <option>{role}</option>;
+                  return <option key={role}>{role}</option>;
                 })}
               </select>
             )}
@@ -247,5 +248,10 @@ const Container = styled.div`
     }
   }
 `;
+
+EditUserDetails.propTypes = {
+  onClose: PropTypes.func,
+  userId: PropTypes.string,
+};
 
 export default EditUserDetails;

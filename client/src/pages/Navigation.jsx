@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { UserContext } from "../App";
 
@@ -68,5 +69,9 @@ const Nav = styled.nav`
     color: var(--background-color2);
   }
 `;
+
+Navigation.propTypes = {
+  handleLogout: PropTypes.func,
+};
 
 export default Navigation;

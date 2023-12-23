@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { FiSend } from "react-icons/fi";
@@ -16,7 +17,7 @@ function SinglePost() {
   const dispatch = useDispatch();
   const { userIdFromToken, user } = useContext(UserContext);
   const { postId } = useParams();
-  const [comment, setComments] = useState("");
+  const [comment, setComment] = useState("");
 
   const post = useSelector((state) => selectPostById(state, postId));
 
@@ -54,7 +55,7 @@ function SinglePost() {
               placeholder="Comments"
               name="comment"
               value={comment}
-              onChange={(e) => setComments(e.target.value)}
+              onChange={(e) => setComment(e.target.value)}
             />
             <button type="submit">
               <FiSend size="1.5rem" color="blue" onClick={handleComment} />
@@ -62,8 +63,8 @@ function SinglePost() {
           </form>
         </div>
         <div className="allComments">
-          {post.comments.map((comment, index) => {
-            return <Comment comment={comment} key={index} />;
+          {post.comments.map((comment) => {
+            return <Comment comment={comment} key={comment.createdOn} />;
           })}
         </div>
       </div>
@@ -86,6 +87,10 @@ function Comment({ comment }) {
     </article>
   );
 }
+
+Comment.propTypes = {
+  comment: PropTypes.object,
+};
 
 const Container = styled.section`
   margin: 0rem 3rem;

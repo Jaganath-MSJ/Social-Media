@@ -27,7 +27,7 @@ export function formatDate(dateString) {
 
   const monthName = months[monthIndex];
 
-  let formattedDay = day;
+  let formattedDay;
   if (day >= 11 && day <= 13) {
     formattedDay = day + "th";
   } else if (day % 10 === 1) {

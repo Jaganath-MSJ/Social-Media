@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Picker from "emoji-picker-react";
 import { useDispatch, useSelector } from "react-redux";
@@ -235,5 +236,9 @@ const Container = styled.aside`
     }
   }
 `;
+
+UserDetails.propTypes = {
+  onOpen: PropTypes.func,
+};
 
 export default UserDetails;
